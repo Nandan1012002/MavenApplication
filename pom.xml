@@ -27,6 +27,14 @@
     </dependency>
   </dependencies>
 
+  <distributionManagement>
+    <respository>
+      <id>local-repo</id>
+      <name>Release Repository</name>
+      <url>file:///C:/xampp/htdocs</url>
+    </respository>
+  </distributionManagement?  
+
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
