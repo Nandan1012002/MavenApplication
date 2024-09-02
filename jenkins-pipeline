@@ -1,38 +1,47 @@
+#!/usr/bin/env groovy
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/windows/servercore:ltsc2019'
-        }
-    }
+    agent any
     stages {
-        stage('Validate Maven Project') {
+        stage('validate Maven Project') {
             steps {
-                bat 'mvn validate'
+                script {
+                    bat 'mvn validate'
+                }
             }
         }
         stage('Compile Maven Project') {
             steps {
-                bat 'mvn compile'
+                script {
+                    bat 'mvn compile'
+                }
             }
         }
         stage('Test Maven Project') {
             steps {
-                bat 'mvn test'
+                script {
+                    bat 'mvn test'
+                }
             }
         }
         stage('Package Maven Project') {
             steps {
-                bat 'mvn package'
+                script {
+                    bat 'mvn package'
+                }
             }
         }
-        stage('Install in Local Repository') {
+        stage('Installation in Local') {
             steps {
-                bat 'mvn install'
+                script {
+                    bat 'mvn install'
+                }
             }
         }
-        stage('Deploy') {
+        stage('Deployment') {
             steps {
-                bat 'mvn deploy'
+                script {
+                    bat 'mvn deploy'
+                }
             }
         }
     }
