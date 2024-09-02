@@ -5,42 +5,42 @@ pipeline {
         stage('validate Maven Project') {
             steps {
                 script {
-                    bat 'mvn validate'
+                    sh 'mvn validate'
                 }
             }
         }
         stage('Compile Maven Project') {
             steps {
                 script {
-                    bat 'mvn compile'
+                    sh 'mvn compile'
                 }
             }
         }
         stage('Test Maven Project') {
             steps {
                 script {
-                    bat 'mvn test'
+                    sh 'mvn test'
                 }
             }
         }
         stage('Package Maven Project') {
             steps {
                 script {
-                    bat 'mvn package'
+                    sh 'mvn package'
                 }
             }
         }
         stage('Installation in Local') {
             steps {
                 script {
-                    bat 'mvn install'
+                    sh 'mvn install'
                 }
             }
         }
         stage('Deployment') {
             steps {
                 script {
-                    bat 'mvn deploy'
+                    sh 'mvn deploy'
                 }
             }
         }
