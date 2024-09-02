@@ -1,6 +1,9 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any
+    tools{
+        maven maven1
+    }
     stages {
         stage('validate Maven Project') {
             steps {
